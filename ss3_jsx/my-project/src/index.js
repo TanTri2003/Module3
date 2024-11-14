@@ -14,9 +14,7 @@ const customer = [
     name: "tri2"
   }
 ]
-const header = <div>
-  <h1>header</h1>
-</div>
+
 const table =
   <table>
     <thead>
@@ -36,17 +34,14 @@ const table =
       ))}
     </tbody>
   </table>
-const footer = <>
-  <h1>Footer</h1>
-</>
-const contain = <div>
-  {header}
-  {table}
-  {footer}
-</div>
+// const contain = <div>
+//   {header}
+//   {table}
+//   {footer}
+// </div>
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  // contain
+  <App/>
 );
 
 // If you want to start measuring performance in your app, pass a function
