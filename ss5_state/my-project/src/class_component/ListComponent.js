@@ -7,7 +7,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 class ListComponent extends React.Component {
     constructor(prop){
-        super(prop);this.state = {
+        super(prop);
+        this.state = {
             customerList: [],
             isAddSuccess: false,
         }
