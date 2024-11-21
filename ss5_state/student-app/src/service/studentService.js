@@ -8,12 +8,12 @@ const studentList = [
     {
         name: "Trí2",
         phone: "0359694849",
-        email: "votantri2006@gmail",
+        email: "votantri2007@gmail",
     },
     {
         name: "Trí3",
         phone: "0359694849",
-        email: "votantri2006@gmail",
+        email: "votantri2008@gmail",
     },
 ]
 export function getAllStudent() {
