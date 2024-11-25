@@ -24,11 +24,14 @@ export function addNewCustomer(students) {
     // kết nối API để thêm mới
     studentList.push(students);
 }
-export function deleteCustomerId(id) {
+export function deleteCustomerId(name) {
     for (let i = 0; i < studentList.length; i++) {
-        if (studentList[i].id === id) {
+        if (studentList[i].name === name) {
             studentList.splice(i, 1);
             break;
         }
     }
+}
+export function searchByName(name){
+    return studentList.filter((students)=>students.name.includes(name))
 }
