@@ -35,4 +35,4 @@ function AddComponent({handleIsLoading}){
         </>
     )
 }
-export default AddComponent;
+export default React.memo(AddComponent);

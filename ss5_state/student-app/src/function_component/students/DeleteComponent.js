@@ -27,4 +27,4 @@ function DeleteComponent({isShowModal,deleteStudent,handleCloseModal,handleIsLoa
     </div>
     )
 }
-export default DeleteComponent;
+export default React.memo(DeleteComponent);

@@ -1,39 +1,55 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import { getAllStudent, searchByName } from "../../service/studentService";
 import 'bootstrap/dist/js/bootstrap.min.js';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import AddComponent from "./AddComponent";
 import DeleteComponent from "./DeleteComponent";
+import EditComponent from "./EditComponent";
 
 const ListComponent = () => {
     const [studentList, setStudentList] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
-    const [isShowModal,setIsShowModal] = useState(false);
-    const [deleteStudent, setDeleteStudent] = useState({})
+    const [isShowModal, setIsShowModal] = useState(false);
+    const [deleteStudent, setDeleteStudent] = useState({});
+    const [editStudent, setEditStudent] = useState({});
+    const [isShowModalEdit, setIsShowModalEdit] = useState(false);
     const searchNameRef = useRef();
     useEffect(() => {
         setStudentList((pre) => ([
             ...getAllStudent()
         ]))
     }, [isLoading])
-    const handleIsLoading = () => {
+
+    const handleIsLoading = useCallback(() => {
         setIsLoading((prevState) => !prevState)
-    }
+    }, [])
+
     const handleSearch = () => {
         let searchName = searchNameRef.current.value;
         const listSearch = searchByName(searchName);
-        setStudentList(()=>[
+        setStudentList(() => [
             ...listSearch
         ])
     }
-    const handleShowModal=(students)=>{
-        setDeleteStudent(()=>({
+
+    const handleShowModal = (students) => {
+        setDeleteStudent(() => ({
             ...students
         }))
-        setIsShowModal((prevState)=>!prevState)
+        setIsShowModal((prevState) => !prevState)
     }
-    const handleCloseModal=()=>{
+    const handleShowModalEdit = (students) => {
+        setEditStudent(()=>({
+            ...students
+        }))
+        setIsShowModalEdit((prevState) => !prevState)
+    }
+
+    const handleCloseModal = () => {
         setIsShowModal(prevState => !prevState)
+    }
+    const handleCloseModalEdit = () => {
+        setIsShowModalEdit(prevState => !prevState)
     }
     return (
         <>
@@ -45,6 +61,7 @@ const ListComponent = () => {
             <table className="table table-dark table-striped">
                 <thead>
                     <tr>
+                        <th>ID</th>
                         <th>Name</th>
                         <th>Phone</th>
                         <th>Email</th>
@@ -53,21 +70,29 @@ const ListComponent = () => {
                 </thead>
                 <tbody>
                     {studentList && studentList.map((students, i) => (
-                        <tr key={students.email}>
+                        <tr key={i}>
+                            <td>{i + 1}</td>
                             <td>{students.name}</td>
                             <td>{students.phone}</td>
                             <td>{students.email}</td>
                             <td>
-                                <button className={'btn btn-sm btn-danger'}>Edit</button>
-                                <button onClick={()=>{
+                                <button onClick={() => {
+                                    handleShowModalEdit(students)
+                                }} className={'btn btn-sm btn-danger'}>Edit</button>
+                                <button onClick={() => {
                                     handleShowModal(students)
                                 }} className={'btn btn-sm btn-danger'}>Delete</button>
+                                <button onClick={() => {
+                                    handleShowModal(students)
+                                }} className={'btn btn-sm btn-danger'}>Deteil</button>
                             </td>
                         </tr>
                     ))}
                 </tbody>
             </table>
-            <DeleteComponent handleIsLoading={handleIsLoading} handleShowModal={handleShowModal} handleCloseModal={handleCloseModal} deleteStudent = {deleteStudent} isShowModal={isShowModal}/>
+
+            <DeleteComponent handleIsLoading={handleIsLoading} handleShowModal={handleShowModal} handleCloseModal={handleCloseModal} deleteStudent={deleteStudent} isShowModal={isShowModal} />
+            <EditComponent isShowModalEdit={isShowModalEdit} editStudent={editStudent} handleCloseModalEdit={handleCloseModalEdit}/>
         </>
     )
 }
