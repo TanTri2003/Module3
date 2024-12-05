@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 function HeaderComponent() {
     return (
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
@@ -14,13 +14,7 @@ function HeaderComponent() {
                             <Link class="nav-link active" aria-current="page" to="/home">Home</Link>
                         </li>
                         <li class="nav-item">
-                            <Link class="nav-link" to="/products">List</Link>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Pricing</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                            <Link class="nav-link" to="/student">List</Link>
                         </li>
                     </ul>
                 </div>
