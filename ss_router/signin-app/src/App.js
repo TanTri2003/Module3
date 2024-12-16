@@ -8,10 +8,10 @@ import ListComponent from './component/ListComponent';
 function App() {
   return (
     <>
-    <LoginComponent/>
-    <Routes>
-      <Route path={'/home'} element={<ListComponent/>}></Route>
-    </Routes>
+      <Routes>
+        <Route path="" element={<LoginComponent />} />
+        <Route path="/home" element={<ListComponent />} />
+      </Routes>
     </>
   );
 }

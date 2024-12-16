@@ -6,9 +6,11 @@ function DetailComponent(){
     const [students,setStudent] = useState({id:"",name:"",phone:"",email:""})
     const {id} = useParams();
     useEffect(()=>{
-        setStudent(()=>({
-            ...findStudentById(id)
-        }))
+        const fData = async()=>{
+            let p = await findStudentById(id)
+            setStudent(p)
+        }
+        fData()
     },[])
     return(
         <>

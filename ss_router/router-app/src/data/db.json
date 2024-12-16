@@ -1,0 +1,102 @@
+{
+  "students": [
+    {
+      "id": 2,
+      "name": "VÕ TẤN TRÍ",
+      "phone": "0359694849",
+      "email": "votantri2009@gmail.com",
+      "gender": "Nam",
+      "hobby": [
+        "Đọc Truyện",
+        "Chơi_Game"
+      ],
+      "country": {
+        "name": "Thành phố Đà Nẵng",
+        "code": 48,
+        "division_type": "thành phố trung ương",
+        "codename": "thanh_pho_da_nang",
+        "phone_code": 236,
+        "districts": []
+      }
+    },
+    {
+      "id": 3,
+      "name": "vo tan tri",
+      "phone": "0344721520",
+      "email": "votantri2004@gmail.com",
+      "gender": "Nam",
+      "hobby": [
+        "Đọc Truyện"
+      ],
+      "country": {
+        "name": "Tỉnh Hải Dương",
+        "code": 30,
+        "division_type": "tỉnh",
+        "codename": "tinh_hai_duong",
+        "phone_code": 220,
+        "districts": []
+      }
+    },
+    {
+      "id": 4,
+      "name": "Võ Tấn Trí",
+      "phone": "123456789",
+      "email": "votantri2009@gmail.com",
+      "gender": "Nam",
+      "hobby": [
+        "Đọc Truyện",
+        "Đọc_sách"
+      ],
+      "country": {
+        "name": "Tỉnh Thái Nguyên",
+        "code": 19,
+        "division_type": "tỉnh",
+        "codename": "tinh_thai_nguyen",
+        "phone_code": 208,
+        "districts": []
+      }
+    },
+    {
+      "id": 5,
+      "name": "VÕ TẤN TRÍ",
+      "phone": "123456789",
+      "email": "votantri2009@gmail.com",
+      "gender": "Nam",
+      "hobby": [
+        "Đọc Truyện",
+        "Chơi_Game",
+        "Đọc_sách"
+      ],
+      "country": {
+        "name": "Thành phố Đà Nẵng",
+        "code": 48,
+        "division_type": "thành phố trung ương",
+        "codename": "thanh_pho_da_nang",
+        "phone_code": 236,
+        "districts": []
+      }
+    }
+  ],
+  "country": [
+    {
+      "id": 1,
+      "name": "Đà Nẵng"
+    },
+    {
+      "id": 2,
+      "name": "Đà Nẵng"
+    },
+    {
+      "id": 3,
+      "name": "Đà Nẵng"
+    },
+    {
+      "id": 4,
+      "name": "Đà Nẵng"
+    },
+    {
+      "id": 5,
+      "name": "Đà Nẵng"
+    }
+  ]
+}

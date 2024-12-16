@@ -13,7 +13,7 @@ const employeesList = [
         id: 1,
         name: "Linh",
         age: 22
-    }
+    },
 ]
 export function getAllStudent() {
     return employeesList;
