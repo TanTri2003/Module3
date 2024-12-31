@@ -1,6 +1,15 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink,useNavigate } from "react-router-dom";
+import {useDispatch, useSelector} from "react-redux";
+import {logout} from "../redux/accountStudent";
 function HeaderComponent() {
+    const account = useSelector(state => state.user.account);
+    const dispatch = useDispatch();
+    const navigate = useNavigate()
+    const handleLogout = () => {
+        dispatch(logout());
+        navigate('/student');
+    }
     return (
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
@@ -16,8 +25,14 @@ function HeaderComponent() {
                         <li class="nav-item">
                             <Link class="nav-link" to="/student">List</Link>
                         </li>
-                        <li class="nav-item">
-                            <Link class="nav-link" to="/login">Login</Link>
+                        <li className="nav-item">
+                            {!account &&<Link class="nav-link" to="/login">Login</Link>}
+                        </li>
+                        <li className="nav-item">
+                            {account && <button onClick={handleLogout}>Logout</button>}
+                        </li>
+                        <li class="nav-link">
+                            {account&&account.username}
                         </li>
                     </ul>
                 </div>

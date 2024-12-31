@@ -2,7 +2,7 @@ import axios from "axios"
 
 export async function getAllCountry() {
     try {
-        const res =await axios.get("https://provinces.open-api.vn/api/?depth=1")
+        const res = await axios.get("http://localhost:8800/country")
         return res.data
     } catch (error) {
         return []

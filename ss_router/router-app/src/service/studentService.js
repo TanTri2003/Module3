@@ -1,59 +1,55 @@
 import axios from "axios"
-// const studentList = [
-//     {
-//         id: 1,
-//         name: "Trí1",
-//         phone: "0359694849",
-//         email: "votantri2006@gmail",
-//         gender:"Nam",
-//         hobby:"Đọc sách",
-//         country:"Quảng Nam"
-//     },
-//     {
-//         id: 2,
-//         name: "Trí2",
-//         phone: "0359694849",
-//         email: "votantri2007@gmail",
-//         gender:"Nam",
-//         hobby:"Đọc sách",
-//         country:"Quảng Nam"
-//     },
-//     {
-//         id: 3,
-//         name: "Trí3",
-//         phone: "0359694849",
-//         email: "votantri2008@gmail",
-//         gender:"Nam",
-//         hobby:"Đọc sách",
-//         country:"Quảng Nam"
-//     },
-// ]
-export async function getAllStudent() {
+let url = `http://localhost:8800/students`
+export async function getAllStudent(page, size) {
     try {
-        const reponse =await axios.get("http://localhost:8800/students")
-        return reponse.data
+        const reponse = await axios.get(`${url}?_sort=name&_order=asc&_page=${page}&_limit=${size}`)
+        const data = reponse.data;
+        const totatRecord = reponse.headers['x-total-count'];
+        return {
+            data: data,
+            totatRecord: totatRecord
+        };
     } catch (error) {
         return []
     }
 }
-export async function searchStudentByName(searchName) {
+export async function searchStudentByName(searchName, searchCountry,page,size) {
+    let url = ` http://localhost:8800/students?name_like=${searchName}&country.id=${searchCountry}&_sort=name&_order=asc&_page=${page}&_limit=${size}`
+    if (searchCountry == "") {
+        url = ` http://localhost:8800/students?name_like=${searchName}&_sort=name&_order=asc&_page=${page}&_limit=${size}`
+    }
     try {
-        const reponse =await axios.get(`http://localhost:8800/students?name_like=${searchName}`)
-        return reponse.data
+        const reponse = await axios.get(url)
+        const data = reponse.data;
+        const totatRecord = reponse.headers['x-total-count'];
+        return {
+            data: data,
+            totatRecord: totatRecord
+        };
     } catch (error) {
         return []
     }
 }
 export async function addComponent(students) {
     try {
-        const reponse =await axios.post("http://localhost:8800/students",students)
+        const reponse = await axios.post(`${url}`, students)
+    } catch (error) {
+        return []
+    }
+}
+export async function updateStudent(id, students) {
+    try {
+        const reponse = await axios.put(`${url}` + id, students)
+        console.log("----------ud-----------");
+        console.log(reponse);
+
     } catch (error) {
         return []
     }
 }
 export async function findStudentById(id) {
     try {
-        const reponse =await axios.get("http://localhost:8800/students/"+id)
+        const reponse = await axios.get(`${url}` + id)
         return reponse.data
     } catch (error) {
         return null
@@ -61,7 +57,7 @@ export async function findStudentById(id) {
 }
 export async function deleteStudentById(id) {
     try {
-        const reponse =await axios.delete("http://localhost:8800/students/"+id)
+        const reponse = await axios.delete(`${url}` + id)
     } catch (error) {
         return []
     }

@@ -11,6 +11,7 @@ import DetailComponent from './component/DetailComponent';
 import AddComponentForm from './component/AddComponentForm';
 import { ToastContainer } from 'react-toastify';
 import LoginComponent from './component/LoginComponent';
+import EditComponent from './component/EditComponent';
 function App() {
   return (
     <>
@@ -22,6 +23,7 @@ function App() {
         <Route path={'/student'} element={<ListComponent />}></Route>
         <Route path={'/student/creat'} element={<AddComponentForm />}></Route>
         <Route path={'/student/detail/:id'} element={<DetailComponent />}></Route>
+        <Route path={'/student/edit/:id'} element={<EditComponent/>}></Route>
       </Routes>
     </>
   );

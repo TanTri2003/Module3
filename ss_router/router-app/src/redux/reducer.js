@@ -1,4 +1,4 @@
-import { combineReducers } from 'react-redux'
+import { combineReducers } from 'redux'
 
 const initState = {
     account: null
@@ -22,5 +22,5 @@ function accountReducer(state = initState, action) {
 }
 
 export const rootReducer = combineReducers({
-
+    user : accountReducer
 })
