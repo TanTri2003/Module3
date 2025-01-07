@@ -1,24 +1,25 @@
 import logo from './logo.svg';
 import './App.css';
-
+import 'bootstrap/dist/js/bootstrap.min.js';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { Routes, Route } from "react-router-dom"
+import { ToastContainer } from 'react-toastify';
+import ListComponent from './component/ListComponent';
+import DetailComponent from './component/DetailComponent';
+import AddComponent from './component/AddComponent';
+import EditComponent from './component/EditComponent';
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <ToastContainer />
+      <Routes>
+      <Route path={''} element={<ListComponent />}></Route>
+      <Route path={'/detail/:id'} element={<DetailComponent />}></Route>
+      <Route path={'/creat'} element={<AddComponent />}></Route>
+      <Route path={'/edit/:id'} element={<EditComponent />}></Route>
+      </Routes>
+    </>
+
   );
 }
 
