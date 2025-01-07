@@ -1,138 +1,137 @@
 {
-    "accounts": [
-        {
-            "id": 1,
-            "username": "admin",
-            "password": "123",
-            "role": "ADMIN"
-        },
-        {
-            "id": 2,
-            "username": "Tri123",
-            "password": "123",
-            "role": "USER"
-        }
-    ],
-    "dichVu": [
-        {
-            "id": 1,
-            "type": {
-                "id": 1,
-                "name": "Villa"
-            },
-            "name": "Villa Deluxe",
-            "area": 250,
-            "rental_cost": 5000000,
-            "people": 8,
-            "rental_type": "Ngày",
-            "room_standard": "5 sao",
-            "description": [
-                "Hồ bơi riêng",
-                "nội thất cao cấp"
-            ],
-            "floor": 2,
-            "image": "/villa1.jpg"
-        },
-        {
-            "id": 2,
-            "type": {
-                "id": 3,
-                "name": "House"
-            },
-            "name": "House Deluxe",
-            "area": 250,
-            "rental_cost": 5000000,
-            "people": 8,
-            "rental_type": "Ngày",
-            "room_standard": "5 sao",
-            "description": [
-                "Hồ bơi riêng",
-                "nội thất cao cấp"
-            ],
-            "floor": 2,
-            "image": "/house1.jpg"
-        }
-        ,
-        {
-            "id": 3,
-            "type": {
-                "id": 3,
-                "name": "Room"
-            },
-            "name": "Room Deluxe",
-            "area": 250,
-            "rental_cost": 5000000,
-            "people": 8,
-            "rental_type": "Ngày",
-            "room_standard": "5 sao",
-            "description": [
-                "Hồ bơi riêng",
-                "nội thất cao cấp"
-            ],
-            "floor": 2,
-            "image": "/room1.jpg"
-        },
-        {
-            "id": 4,
-            "type": {
-                "id": 3,
-                "name": "Room"
-            },
-            "name": "Room Deluxe",
-            "area": 250,
-            "rental_cost": 5000000,
-            "people": 8,
-            "rental_type": "Ngày",
-            "room_standard": "5 sao",
-            "description": [
-                "Hồ bơi riêng",
-                "nội thất cao cấp"
-            ],
-            "floor": 2,
-            "image": "/rom3.jpg"
-        },
-        {
-            "id": 5,
-            "type": {
-                "id": 3,
-                "name": "Room"
-            },
-            "name": "Room Deluxe",
-            "area": 250,
-            "rental_cost": 5000000,
-            "people": 8,
-            "rental_type": "Ngày",
-            "room_standard": "5 sao",
-            "description": [
-                "Hồ bơi riêng",
-                "nội thất cao cấp"
-            ],
-            "floor": 2,
-            "image": "/rom3.jpg"
-        }
-    ],
-    "type": [
-        {
-            "id": 1,
-            "name": "Villa"
-        },
-        {
-            "id": 2,
-            "name": "House"
-        },
-        {
-            "id": 3,
-            "name": "Room"
-        }
-    ],
-    "additional_services": [
-        {
-            "id": 1,
-            "name": "Thuê xe"
-        },
-        {
-            "id": 2,
-            "name": "Ăn uống"
-        }
-    ]
+  "accounts": [
+    {
+      "id": 1,
+      "username": "admin",
+      "password": "123",
+      "role": "ADMIN"
+    },
+    {
+      "id": 2,
+      "username": "Tri123",
+      "password": "123",
+      "role": "USER"
+    }
+  ],
+  "dichVu": [
+    {
+      "id": 1,
+      "type": {
+        "id": 1,
+        "name": "Villa"
+      },
+      "name": "Villa Deluxe",
+      "area": "250 m2",
+      "rental_cost": "5000000 VNĐ",
+      "people": 8,
+      "rental_type": "Ngày",
+      "room_standard": "5 sao",
+      "description": [
+        "Hồ bơi riêng",
+        "nội thất cao cấp"
+      ],
+      "floor": 2,
+      "image": "/villa1.jpg"
+    },
+    {
+      "id": 2,
+      "type": {
+        "id": 3,
+        "name": "House"
+      },
+      "name": "House Deluxe",
+      "area": "250 m2",
+      "rental_cost": "5000000 VNĐ",
+      "people": 8,
+      "rental_type": "Ngày",
+      "room_standard": "5 sao",
+      "description": [
+        "Hồ bơi riêng",
+        "nội thất cao cấp"
+      ],
+      "floor": 2,
+      "image": "/house1.jpg"
+    },
+    {
+      "id": 3,
+      "type": {
+        "id": 3,
+        "name": "Room"
+      },
+      "name": "Room Deluxe",
+      "area": "250 m2",
+      "rental_cost": "5000000 VNĐ",
+      "people": 8,
+      "rental_type": "Ngày",
+      "room_standard": "5 sao",
+      "description": [
+        "Hồ bơi riêng",
+        "nội thất cao cấp"
+      ],
+      "floor": 2,
+      "image": "/room1.jpg"
+    },
+    {
+      "id": 4,
+      "type": {
+        "id": 3,
+        "name": "Room"
+      },
+      "name": "Room Deluxe",
+      "area": 250,
+      "rental_cost": 5000000,
+      "people": 8,
+      "rental_type": "Ngày",
+      "room_standard": "5 sao",
+      "description": [
+        "Hồ bơi riêng",
+        "nội thất cao cấp"
+      ],
+      "floor": 2,
+      "image": "/rom3.jpg"
+    },
+    {
+      "id": 5,
+      "type": {
+        "id": 3,
+        "name": "Room"
+      },
+      "name": "Room Deluxe",
+      "area": "250 m2",
+      "rental_cost": 5000000,
+      "people": 8,
+      "rental_type": "Ngày",
+      "room_standard": "5 sao",
+      "description": [
+        "Hồ bơi riêng",
+        "nội thất cao cấp"
+      ],
+      "floor": 2,
+      "image": "/rom3.jpg"
+    }
+  ],
+  "type": [
+    {
+      "id": 1,
+      "name": "Villa"
+    },
+    {
+      "id": 2,
+      "name": "House"
+    },
+    {
+      "id": 3,
+      "name": "Room"
+    }
+  ],
+  "additional_services": [
+    {
+      "id": 1,
+      "name": "Thuê xe"
+    },
+    {
+      "id": 2,
+      "name": "Ăn uống"
+    }
+  ]
 }
